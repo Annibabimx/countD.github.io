@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="index.css" type="text/css">
+</head>
+<body>
+<div class="container">
+    <img src="" class="logo">
+    <div>
+        <img src="https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2023/06/iOS-17-wallpaper.jpg?w=1500&quality=82&strip=all&ssl=1" alt="iphone" width="500px" height="400px">
+    </div>
+    <p>
+        <P> Lorem ipsum dolor sit amet consectetur adipisicing</P>
+        <P>Perferendis magnam consequuntur magni, placeat deleniti reiciendis dolores</P>
+        <P> ex ipsa recusandae eveniet quos quia</P>
+        <P> at veniam quae. Reiciendis delectusanimi repudiandae natus.</P>
+    </p>
+
+    <div class="content">
+        <br><br><br>
+        <p style="font-style: italic;">iphone will be launching soon</p>
+        <h1>The  <span>IPHONE</span>WILL BE LAUNCHING IN</h1>
+        <div class="launch-time">
+            <div>
+                <p id="days">00</p>
+                <span>Days</span>
+            </div>
+
+            <div>
+                <p id="hours">00</p>
+                <span>Hours</span>
+            </div>
+
+            <div>
+                <p id="minutes">00</p>
+                <span>Minutes</span>
+            </div>
+            
+            <div>
+                <p id="Seconds">00</p>
+                <span>Seconds</span>
+            </div>
+
+    </div>
+
+<script>
+    var countDownDate = new Date("July 19, 2024 00:00:00").getTime();
+    var x = setInterval(function(){
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var Seconds = Math.floor((distance % (1000 * 60)) / 1000)
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("Seconds").innerHTML = Seconds;
+
+        if(distance < 0){
+            clearInterval(x);
+            document.getElementById("days").innerHTML = "00";
+            document.getElementById("hours").innerHTML = "00";
+            document.getElementById("minutes").innerHTML = "00";
+            document.getElementById("Seconds").innerHTML = "00";
+
+        }
+    },1000)
+    
+</script>
+    
+    
+</body>
+</html>
